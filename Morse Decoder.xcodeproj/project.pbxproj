@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		981CAC081FAD493E00CF91D6 /* stringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CAC071FAD493E00CF91D6 /* stringExtensions.swift */; };
+		981CAC0C1FAEBA4100CF91D6 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CAC0B1FAEBA4100CF91D6 /* TableVC.swift */; };
+		981CAC101FAF0B9400CF91D6 /* AVTonePlayerUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */; };
+		986A783A1FAD13810025DD21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A78391FAD13810025DD21 /* AppDelegate.swift */; };
+		986A783C1FAD13810025DD21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A783B1FAD13810025DD21 /* ViewController.swift */; };
+		986A783F1FAD13810025DD21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986A783D1FAD13810025DD21 /* Main.storyboard */; };
+		986A78421FAD13810025DD21 /* Morse_Decoder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 986A78401FAD13810025DD21 /* Morse_Decoder.xcdatamodeld */; };
+		986A78441FAD13810025DD21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986A78431FAD13810025DD21 /* Assets.xcassets */; };
+		986A78471FAD13810025DD21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986A78451FAD13810025DD21 /* LaunchScreen.storyboard */; };
+		986A78521FAD13810025DD21 /* Morse_DecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A78511FAD13810025DD21 /* Morse_DecoderTests.swift */; };
+		986A785D1FAD13810025DD21 /* Morse_DecoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A785C1FAD13810025DD21 /* Morse_DecoderUITests.swift */; };
+		98D887B41FB1156200778808 /* morseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D887B31FB1156200778808 /* morseCode.swift */; };
+		98D887FF1FB14FB200778808 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D887FE1FB14FB200778808 /* HeaderCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		986A784E1FAD13810025DD21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 986A782E1FAD13810025DD21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 986A78351FAD13810025DD21;
+			remoteInfo = "Morse Decoder";
+		};
+		986A78591FAD13810025DD21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 986A782E1FAD13810025DD21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 986A78351FAD13810025DD21;
+			remoteInfo = "Morse Decoder";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		981CAC071FAD493E00CF91D6 /* stringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringExtensions.swift; sourceTree = "<group>"; };
+		981CAC0B1FAEBA4100CF91D6 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
+		981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVTonePlayerUnit.swift; sourceTree = "<group>"; };
+		986A78361FAD13810025DD21 /* Morse Decoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Morse Decoder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		986A78391FAD13810025DD21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		986A783B1FAD13810025DD21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		986A783E1FAD13810025DD21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		986A78411FAD13810025DD21 /* Morse_Decoder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Morse_Decoder.xcdatamodel; sourceTree = "<group>"; };
+		986A78431FAD13810025DD21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		986A78461FAD13810025DD21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		986A78481FAD13810025DD21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986A784D1FAD13810025DD21 /* Morse DecoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Morse DecoderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		986A78511FAD13810025DD21 /* Morse_DecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Morse_DecoderTests.swift; sourceTree = "<group>"; };
+		986A78531FAD13810025DD21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986A78581FAD13810025DD21 /* Morse DecoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Morse DecoderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		986A785C1FAD13810025DD21 /* Morse_DecoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Morse_DecoderUITests.swift; sourceTree = "<group>"; };
+		986A785E1FAD13810025DD21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98D887B31FB1156200778808 /* morseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = morseCode.swift; sourceTree = "<group>"; };
+		98D887FE1FB14FB200778808 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		986A78331FAD13810025DD21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986A784A1FAD13810025DD21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986A78551FAD13810025DD21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		986A782D1FAD13810025DD21 = {
+			isa = PBXGroup;
+			children = (
+				98D887FE1FB14FB200778808 /* HeaderCell.swift */,
+				986A78381FAD13810025DD21 /* Morse Decoder */,
+				986A78501FAD13810025DD21 /* Morse DecoderTests */,
+				986A785B1FAD13810025DD21 /* Morse DecoderUITests */,
+				986A78371FAD13810025DD21 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		986A78371FAD13810025DD21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				986A78361FAD13810025DD21 /* Morse Decoder.app */,
+				986A784D1FAD13810025DD21 /* Morse DecoderTests.xctest */,
+				986A78581FAD13810025DD21 /* Morse DecoderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		986A78381FAD13810025DD21 /* Morse Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				986A78391FAD13810025DD21 /* AppDelegate.swift */,
+				981CAC071FAD493E00CF91D6 /* stringExtensions.swift */,
+				98D887B31FB1156200778808 /* morseCode.swift */,
+				98D887FD1FB139C600778808 /* Player */,
+				986A783B1FAD13810025DD21 /* ViewController.swift */,
+				981CAC0B1FAEBA4100CF91D6 /* TableVC.swift */,
+				986A783D1FAD13810025DD21 /* Main.storyboard */,
+				986A78431FAD13810025DD21 /* Assets.xcassets */,
+				986A78451FAD13810025DD21 /* LaunchScreen.storyboard */,
+				986A78481FAD13810025DD21 /* Info.plist */,
+				986A78401FAD13810025DD21 /* Morse_Decoder.xcdatamodeld */,
+			);
+			path = "Morse Decoder";
+			sourceTree = "<group>";
+		};
+		986A78501FAD13810025DD21 /* Morse DecoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				986A78511FAD13810025DD21 /* Morse_DecoderTests.swift */,
+				986A78531FAD13810025DD21 /* Info.plist */,
+			);
+			path = "Morse DecoderTests";
+			sourceTree = "<group>";
+		};
+		986A785B1FAD13810025DD21 /* Morse DecoderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				986A785C1FAD13810025DD21 /* Morse_DecoderUITests.swift */,
+				986A785E1FAD13810025DD21 /* Info.plist */,
+			);
+			path = "Morse DecoderUITests";
+			sourceTree = "<group>";
+		};
+		98D887FD1FB139C600778808 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		986A78351FAD13810025DD21 /* Morse Decoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 986A78611FAD13810025DD21 /* Build configuration list for PBXNativeTarget "Morse Decoder" */;
+			buildPhases = (
+				986A78321FAD13810025DD21 /* Sources */,
+				986A78331FAD13810025DD21 /* Frameworks */,
+				986A78341FAD13810025DD21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Morse Decoder";
+			productName = "Morse Decoder";
+			productReference = 986A78361FAD13810025DD21 /* Morse Decoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		986A784C1FAD13810025DD21 /* Morse DecoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 986A78641FAD13810025DD21 /* Build configuration list for PBXNativeTarget "Morse DecoderTests" */;
+			buildPhases = (
+				986A78491FAD13810025DD21 /* Sources */,
+				986A784A1FAD13810025DD21 /* Frameworks */,
+				986A784B1FAD13810025DD21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				986A784F1FAD13810025DD21 /* PBXTargetDependency */,
+			);
+			name = "Morse DecoderTests";
+			productName = "Morse DecoderTests";
+			productReference = 986A784D1FAD13810025DD21 /* Morse DecoderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		986A78571FAD13810025DD21 /* Morse DecoderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 986A78671FAD13810025DD21 /* Build configuration list for PBXNativeTarget "Morse DecoderUITests" */;
+			buildPhases = (
+				986A78541FAD13810025DD21 /* Sources */,
+				986A78551FAD13810025DD21 /* Frameworks */,
+				986A78561FAD13810025DD21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				986A785A1FAD13810025DD21 /* PBXTargetDependency */,
+			);
+			name = "Morse DecoderUITests";
+			productName = "Morse DecoderUITests";
+			productReference = 986A78581FAD13810025DD21 /* Morse DecoderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		986A782E1FAD13810025DD21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Eli Byers";
+				TargetAttributes = {
+					986A78351FAD13810025DD21 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					986A784C1FAD13810025DD21 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 986A78351FAD13810025DD21;
+					};
+					986A78571FAD13810025DD21 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 986A78351FAD13810025DD21;
+					};
+				};
+			};
+			buildConfigurationList = 986A78311FAD13810025DD21 /* Build configuration list for PBXProject "Morse Decoder" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 986A782D1FAD13810025DD21;
+			productRefGroup = 986A78371FAD13810025DD21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				986A78351FAD13810025DD21 /* Morse Decoder */,
+				986A784C1FAD13810025DD21 /* Morse DecoderTests */,
+				986A78571FAD13810025DD21 /* Morse DecoderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		986A78341FAD13810025DD21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986A78471FAD13810025DD21 /* LaunchScreen.storyboard in Resources */,
+				986A78441FAD13810025DD21 /* Assets.xcassets in Resources */,
+				986A783F1FAD13810025DD21 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986A784B1FAD13810025DD21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986A78561FAD13810025DD21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		986A78321FAD13810025DD21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				981CAC081FAD493E00CF91D6 /* stringExtensions.swift in Sources */,
+				986A783C1FAD13810025DD21 /* ViewController.swift in Sources */,
+				98D887FF1FB14FB200778808 /* HeaderCell.swift in Sources */,
+				986A78421FAD13810025DD21 /* Morse_Decoder.xcdatamodeld in Sources */,
+				981CAC101FAF0B9400CF91D6 /* AVTonePlayerUnit.swift in Sources */,
+				98D887B41FB1156200778808 /* morseCode.swift in Sources */,
+				981CAC0C1FAEBA4100CF91D6 /* TableVC.swift in Sources */,
+				986A783A1FAD13810025DD21 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986A78491FAD13810025DD21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986A78521FAD13810025DD21 /* Morse_DecoderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		986A78541FAD13810025DD21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				986A785D1FAD13810025DD21 /* Morse_DecoderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		986A784F1FAD13810025DD21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 986A78351FAD13810025DD21 /* Morse Decoder */;
+			targetProxy = 986A784E1FAD13810025DD21 /* PBXContainerItemProxy */;
+		};
+		986A785A1FAD13810025DD21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 986A78351FAD13810025DD21 /* Morse Decoder */;
+			targetProxy = 986A78591FAD13810025DD21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		986A783D1FAD13810025DD21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				986A783E1FAD13810025DD21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		986A78451FAD13810025DD21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				986A78461FAD13810025DD21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		986A785F1FAD13810025DD21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		986A78601FAD13810025DD21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		986A78621FAD13810025DD21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24S3R988NC;
+				INFOPLIST_FILE = "Morse Decoder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elibyers.Morse-Decoder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		986A78631FAD13810025DD21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24S3R988NC;
+				INFOPLIST_FILE = "Morse Decoder/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elibyers.Morse-Decoder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		986A78651FAD13810025DD21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24S3R988NC;
+				INFOPLIST_FILE = "Morse DecoderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elibyers.Morse-DecoderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Morse Decoder.app/Morse Decoder";
+			};
+			name = Debug;
+		};
+		986A78661FAD13810025DD21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24S3R988NC;
+				INFOPLIST_FILE = "Morse DecoderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elibyers.Morse-DecoderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Morse Decoder.app/Morse Decoder";
+			};
+			name = Release;
+		};
+		986A78681FAD13810025DD21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24S3R988NC;
+				INFOPLIST_FILE = "Morse DecoderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elibyers.Morse-DecoderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Morse Decoder";
+			};
+			name = Debug;
+		};
+		986A78691FAD13810025DD21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24S3R988NC;
+				INFOPLIST_FILE = "Morse DecoderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.elibyers.Morse-DecoderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Morse Decoder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		986A78311FAD13810025DD21 /* Build configuration list for PBXProject "Morse Decoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986A785F1FAD13810025DD21 /* Debug */,
+				986A78601FAD13810025DD21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		986A78611FAD13810025DD21 /* Build configuration list for PBXNativeTarget "Morse Decoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986A78621FAD13810025DD21 /* Debug */,
+				986A78631FAD13810025DD21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		986A78641FAD13810025DD21 /* Build configuration list for PBXNativeTarget "Morse DecoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986A78651FAD13810025DD21 /* Debug */,
+				986A78661FAD13810025DD21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		986A78671FAD13810025DD21 /* Build configuration list for PBXNativeTarget "Morse DecoderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				986A78681FAD13810025DD21 /* Debug */,
+				986A78691FAD13810025DD21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		986A78401FAD13810025DD21 /* Morse_Decoder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				986A78411FAD13810025DD21 /* Morse_Decoder.xcdatamodel */,
+			);
+			currentVersion = 986A78411FAD13810025DD21 /* Morse_Decoder.xcdatamodel */;
+			path = Morse_Decoder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 986A782E1FAD13810025DD21 /* Project object */;
+}
