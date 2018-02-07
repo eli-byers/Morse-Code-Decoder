@@ -89,7 +89,6 @@
 		986A782D1FAD13810025DD21 = {
 			isa = PBXGroup;
 			children = (
-				98D887FE1FB14FB200778808 /* HeaderCell.swift */,
 				986A78381FAD13810025DD21 /* Morse Decoder */,
 				986A78501FAD13810025DD21 /* Morse DecoderTests */,
 				986A785B1FAD13810025DD21 /* Morse DecoderUITests */,
@@ -113,6 +112,7 @@
 				986A78391FAD13810025DD21 /* AppDelegate.swift */,
 				981CAC071FAD493E00CF91D6 /* stringExtensions.swift */,
 				98D887B31FB1156200778808 /* morseCode.swift */,
+				98D887FE1FB14FB200778808 /* HeaderCell.swift */,
 				98D887FD1FB139C600778808 /* Player */,
 				986A783B1FAD13810025DD21 /* ViewController.swift */,
 				981CAC0B1FAEBA4100CF91D6 /* TableVC.swift */,
