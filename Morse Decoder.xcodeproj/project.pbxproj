@@ -11,7 +11,7 @@
 		981CAC0C1FAEBA4100CF91D6 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CAC0B1FAEBA4100CF91D6 /* TableVC.swift */; };
 		981CAC101FAF0B9400CF91D6 /* AVTonePlayerUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */; };
 		986A783A1FAD13810025DD21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A78391FAD13810025DD21 /* AppDelegate.swift */; };
-		986A783C1FAD13810025DD21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A783B1FAD13810025DD21 /* ViewController.swift */; };
+		986A783C1FAD13810025DD21 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986A783B1FAD13810025DD21 /* MainVC.swift */; };
 		986A783F1FAD13810025DD21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986A783D1FAD13810025DD21 /* Main.storyboard */; };
 		986A78421FAD13810025DD21 /* Morse_Decoder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 986A78401FAD13810025DD21 /* Morse_Decoder.xcdatamodeld */; };
 		986A78441FAD13810025DD21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986A78431FAD13810025DD21 /* Assets.xcassets */; };
@@ -45,7 +45,7 @@
 		981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVTonePlayerUnit.swift; sourceTree = "<group>"; };
 		986A78361FAD13810025DD21 /* Morse Decoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Morse Decoder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		986A78391FAD13810025DD21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		986A783B1FAD13810025DD21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		986A783B1FAD13810025DD21 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		986A783E1FAD13810025DD21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		986A78411FAD13810025DD21 /* Morse_Decoder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Morse_Decoder.xcdatamodel; sourceTree = "<group>"; };
 		986A78431FAD13810025DD21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 				981CAC071FAD493E00CF91D6 /* stringExtensions.swift */,
 				98D887B31FB1156200778808 /* morseCode.swift */,
 				98D887FE1FB14FB200778808 /* HeaderCell.swift */,
-				98D887FD1FB139C600778808 /* Player */,
-				986A783B1FAD13810025DD21 /* ViewController.swift */,
+				981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */,
+				986A783B1FAD13810025DD21 /* MainVC.swift */,
 				981CAC0B1FAEBA4100CF91D6 /* TableVC.swift */,
 				986A783D1FAD13810025DD21 /* Main.storyboard */,
 				986A78431FAD13810025DD21 /* Assets.xcassets */,
@@ -141,14 +141,6 @@
 				986A785E1FAD13810025DD21 /* Info.plist */,
 			);
 			path = "Morse DecoderUITests";
-			sourceTree = "<group>";
-		};
-		98D887FD1FB139C600778808 /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				981CAC0F1FAF0B9400CF91D6 /* AVTonePlayerUnit.swift */,
-			);
-			name = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981CAC081FAD493E00CF91D6 /* stringExtensions.swift in Sources */,
-				986A783C1FAD13810025DD21 /* ViewController.swift in Sources */,
+				986A783C1FAD13810025DD21 /* MainVC.swift in Sources */,
 				98D887FF1FB14FB200778808 /* HeaderCell.swift in Sources */,
 				986A78421FAD13810025DD21 /* Morse_Decoder.xcdatamodeld in Sources */,
 				981CAC101FAF0B9400CF91D6 /* AVTonePlayerUnit.swift in Sources */,

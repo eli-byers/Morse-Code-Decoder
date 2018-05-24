@@ -25,16 +25,16 @@ class AVTonePlayerUnit: AVAudioPlayerNode {
     }
     
     func prepareBuffer() -> AVAudioPCMBuffer {
-        let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: bufferCapacity)
-        fillBuffer(buffer!)
-        return buffer!
+        let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: bufferCapacity)!
+        fillBuffer(buffer)
+        return buffer
     }
     
     func fillBuffer(_ buffer: AVAudioPCMBuffer) {
         let data = buffer.floatChannelData?[0]
         let numberFrames = buffer.frameCapacity
         var theta = self.theta
-        let theta_increment = 2.0 * .pi * self.frequency / self.sampleRate
+        let theta_increment = 2.0 * .pi * frequency / sampleRate
         
         for frame in 0..<Int(numberFrames) {
             data?[frame] = Float32(sin(theta) * amplitude)

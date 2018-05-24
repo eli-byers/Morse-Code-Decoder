@@ -6,12 +6,20 @@
 //  Copyright © 2017 Eli Byers. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
+
+func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString
+{
+    let result = NSMutableAttributedString()
+    result.append(left)
+    result.append(right)
+    return result
+}
 
 extension NSMutableAttributedString {
     
-    func appendString(_ string: String, with attributes:[NSAttributedStringKey : Any]){
+    func appendString(_ string: String, with attributes:[NSAttributedStringKey : Any]? = nil){
         let strToAdd = NSAttributedString(string: string, attributes: attributes)
         self.append(strToAdd)
     }
@@ -19,6 +27,16 @@ extension NSMutableAttributedString {
     func removeLast(){
         self.deleteCharacters(in: NSMakeRange(length - 1, 1))
     }
+    
+    func center() -> Self {
+        let myParagraphStyle = NSMutableParagraphStyle()
+        myParagraphStyle.alignment = .center // center the text
+//        myParagraphStyle.lineSpacing = 14 //Change spacing between lines
+//        myParagraphStyle.paragraphSpacing = 38 //Change space between paragraphs
+        self.addAttributes([.paragraphStyle: myParagraphStyle], range: NSRange(location: 0, length: self.length))
+        return self
+    }
+    
 }
 
 extension String {
