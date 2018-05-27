@@ -20,6 +20,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var morseTextView: UITextView!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
 
+    let defaults = UserDefaults.standard
+    
     // morse player
     let timer = DispatchSource.makeTimerSource()
     let tone = AVTonePlayerUnit()
@@ -66,17 +68,25 @@ class MainVC: UIViewController {
         let interval = DispatchTimeInterval.milliseconds(20)
         timer.schedule(deadline: DispatchTime.now(), repeating: interval, leeway: interval)
         timer.setEventHandler(handler: self.playMorseCode)
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
         setUIColor()
     }
 
     func setUIColor(){
-        morseAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
-        engAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
+        // for night mode
+        let nightMode = defaults.value(forKey: "NightMode") as! Bool
+        if nightMode {
+            morseAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
+            engAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
+            backgroundViews.forEach({view in view.backgroundColor = UI.Gray})
+        }
         
-        backgroundViews.forEach({view in view.backgroundColor = backGround})
-        borderView.backgroundColor = mainColor
-        buttons.forEach({ button in button.backgroundColor = mainColor })
+        let colorTag = defaults.value(forKey: "UIColor") as! Int
+        let selectedColor = UI.colorFor(tag: colorTag)
+        buttons.forEach({ button in button.backgroundColor = selectedColor })
+        borderView.backgroundColor = selectedColor
     }
     
     //=================================================

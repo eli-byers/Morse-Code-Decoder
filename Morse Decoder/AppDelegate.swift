@@ -9,29 +9,48 @@
 import UIKit
 import CoreData
 
-let mainColor = UIColor.orange
-let backGround = UIColor.darkGray
+class UI: NSObject {
+    static let Purple = UIColor(red: 148/255, green: 55/255, blue: 255/255, alpha: 1)
+    static let Green = UIColor(red: 0/255, green: 188/255, blue: 96/255, alpha: 1)
+    static let Orange = UIColor.orange
+    static let Blue = UIColor(red: 71/255, green: 159/255, blue: 248/255, alpha: 1)
+    static let Gray = UIColor.darkGray
+    
+    static func colorFor(tag: Int) -> UIColor? {
+        let colors = [UI.Purple, UI.Green, UI.Orange, UI.Blue]
+        if 0 <= tag && tag <= colors.count { return colors[tag] }
+        return nil
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let defaults = UserDefaults.standard
+    
+    func setUIColor(_ tag: Int){
+        defaults.setValue (tag, forKey: "UIColor")
+        let color = UI.colorFor(tag: tag)
+        
+        UINavigationBar.appearance().barTintColor = color
+        window?.tintColor = color
+    }
 
-
-//    func setUIColor(main: UIColor, back: UIColor){
-//        NSUer
-//    }
-//
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if defaults.value(forKey: "UIColor") == nil {
+            defaults.set(3, forKey: "UIColor")
+            defaults.set(false, forKey: "NightMode")
+        }
         
+        let tag = defaults.value(forKey: "UIColor") as! Int
+        setUIColor(tag)
         
-        
-        UINavigationBar.appearance().barTintColor = mainColor
+        // white nav
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         
-        window?.tintColor = mainColor
         
 //        UINavigationBar.appearance().barTintColor = UIColor(red: 76/255, green: 161/266, blue: 245/255, alpha: 1)
 //        UINavigationBar.appearance().tintColor = .white
