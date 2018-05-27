@@ -9,6 +9,37 @@
 import UIKit
 
 
+class NoOptionTextField: UITextView {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+}
+
+extension UITextView {
+    func cursorPosition() -> (start: Int, end: Int)? {
+        if let range = self.selectedTextRange {
+            let start = offset(
+                from: beginningOfDocument,
+                to: range.start
+            )
+            
+            let end = offset(
+                from: beginningOfDocument,
+                to: range.end
+            )
+            
+            return (start, end)
+        }
+        return nil
+    }
+    
+    func setCursorPotition(to index: Int){
+        if let newPosition = position(from: beginningOfDocument, offset: index) {
+            self.selectedTextRange = textRange(from: newPosition, to: newPosition)
+        }
+    }
+}
+
 func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString
 {
     let result = NSMutableAttributedString()

@@ -12,6 +12,10 @@ import AVFoundation
 
 class MainVC: UIViewController {
     
+    @IBOutlet weak var borderView: UIView!
+    @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var backgroundViews: [UIView]!
+    
     @IBOutlet weak var engTextView: UITextView!
     @IBOutlet weak var morseTextView: UITextView!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
@@ -28,9 +32,10 @@ class MainVC: UIViewController {
     
     // output
     var morseText: String = ""
+    var cursorPos: Int = 0;
 
     var engAttrs:[NSAttributedStringKey: Any] = [NSAttributedStringKey.font:UIFont(name: "AppleSDGothicNeo-Medium", size: 45)!]
-    let morseAttrs = [NSAttributedStringKey.font:UIFont(name: "Georgia", size: 45)!]
+    var morseAttrs:[NSAttributedStringKey: Any] = [NSAttributedStringKey.font:UIFont(name: "Georgia", size: 45)!]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +44,7 @@ class MainVC: UIViewController {
         engTextView.delegate = self
         
         morseTextView.text = ""
+        morseTextView.delegate = self
         // remove kayboard from morseLabel
         morseTextView.inputView = UIView()
         morseTextView.becomeFirstResponder()
@@ -60,92 +66,41 @@ class MainVC: UIViewController {
         let interval = DispatchTimeInterval.milliseconds(20)
         timer.schedule(deadline: DispatchTime.now(), repeating: interval, leeway: interval)
         timer.setEventHandler(handler: self.playMorseCode)
+    
+        setUIColor()
     }
 
-
+    func setUIColor(){
+        morseAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
+        engAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
+        
+        backgroundViews.forEach({view in view.backgroundColor = backGround})
+        borderView.backgroundColor = mainColor
+        buttons.forEach({ button in button.backgroundColor = mainColor })
+    }
+    
     //=================================================
     //                 MORSE DECODING
     //=================================================
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        //FIXME: Add in middle of textView
-        morseText += ["·","-"," ","/"][sender.tag]
-        updateOutputMTE(string: morseText)
-    }
-    
-    func morseDecode(string: String) -> NSMutableAttributedString {
-        let engOutputStr = NSMutableAttributedString()
-        let wordArray = string.components(separatedBy: "/")
-        for word in wordArray {
-            let characterArray = word.components(separatedBy: " ")
-            for morseChar in characterArray {
-                 if let c = morseToAlphaNum[morseChar] {
-                    engOutputStr.appendString(c)
-                }
-                // make unknown characters a red '?'
-                else if morseChar != "" {
-                    // 25A1 - WHITE SQUARE
-                    // 003D - HORIZONTAL LINES
-                    // 3013 - LOLG HORIZONTAL LINES
-                    engOutputStr.appendString("?", with: [.foregroundColor: UIColor.red])
-                }
-            }
-            engOutputStr.appendString(" ")
+    func makeMorseActive() -> Bool {
+        if !morseTextView.isFirstResponder {
+            morseTextView.becomeFirstResponder()
+            return true
         }
-        engOutputStr.removeLast()
-        
-        return engOutputStr
-    }
-    
-    func updateMorseOutput(to string: String){
-        // replace doublespaces with /
-        var morseText = ""
-        do {
-            let regex = try NSRegularExpression(pattern: "[\\/| ]{2,}", options: .caseInsensitive)
-                morseText = regex.stringByReplacingMatches(
-                in: string,
-                options: NSRegularExpression.MatchingOptions(rawValue: 0),
-                range: NSMakeRange(0, string.count),
-                withTemplate: "/"
-            )
-        } catch { print("regex error") }
-        
-        // make "/" in morseText gray
-        let morseAttrString = NSMutableAttributedString(string: morseText, attributes: morseAttrs)
-        for idx in 0..<morseText.count {
-            if morseText[idx] == "/" {
-                morseAttrString.addAttribute(
-                    .foregroundColor,
-                    value: UIColor(red:0.89, green:0.89, blue:0.89, alpha:1.0),
-                    range: NSRange(location:idx,length:1)
-                )
-            }
-        }
-        
-        morseTextView.attributedText = morseAttrString.center()
-        let range = NSMakeRange(morseTextView.text.count - 1, 0)
-        morseTextView.scrollRangeToVisible(range)
-    }
-    
-    func updateOutputMTE(string: String) {
-        updateMorseOutput(to: string)
-        
-        // translate morse to english
-        let engOutput = morseDecode(string: string)
-        engOutput.addAttributes(engAttrs, range: NSRange(location: 0, length: engOutput.length))
-        engTextView.attributedText = engOutput.center()
-        
-        // scroll to bottom of text areas
-        let range = NSMakeRange(engTextView.text.count - 1, 0)
-        engTextView.scrollRangeToVisible(range)
+        return false
     }
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
+        if makeMorseActive() { return }
+
         morseText = ""
         updateOutputMTE(string: morseText)
     }
     
     @IBAction func delButtonPressed(_ sender: UIButton) {
+        if makeMorseActive() { return }
+
         //FIXME: Delete in middle of textView
         if morseText.count > 0 {
             
@@ -171,6 +126,98 @@ class MainVC: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if makeMorseActive() { return }
+        
+        if let idx = morseTextView.cursorPosition() {
+            cursorPos = idx.start
+            let newChar = ["·","-"," ","/"][sender.tag]
+            let preChar = morseText[cursorPos-1]
+
+            // prevent extra white space
+            if preChar == "/" && ["/"," "].contains(newChar) { return }
+            
+            // get sidex
+            let left = morseText.substring(toIndex: idx.start)
+            let right = morseText.substring(fromIndex: idx.end)
+            morseText = left + newChar + right
+            updateOutputMTE(string: morseText)
+            
+            // adjust when " " gets replaced by "/"
+            if preChar == " " && newChar == " " { cursorPos -= 1 }
+            // update cursor
+            morseTextView.setCursorPotition(to: cursorPos + 1)
+        }
+    }
+    
+    func morseDecode(string: String) -> NSMutableAttributedString {
+        let engOutputStr = NSMutableAttributedString()
+        let wordArray = string.components(separatedBy: "/")
+        for word in wordArray {
+            let characterArray = word.components(separatedBy: " ")
+            for i in 0..<characterArray.count {
+                let morseChar = characterArray[i]
+                if let c = morseToAlphaNum[morseChar] {
+                    engOutputStr.appendString(c, with: engAttrs)
+                }
+                // make unknown characters a red '?'
+                else if morseChar != "" {
+                    // 25A1 - WHITE SQUARE
+                    // 003D - HORIZONTAL LINES
+                    // 3013 - LOLG HORIZONTAL LINES
+                    engOutputStr.appendString("?", with: engAttrs)
+                    engOutputStr.addAttributes([.foregroundColor: UIColor.red], range: NSRange(location: i, length:1))
+                }
+            }
+            engOutputStr.appendString(" ")
+        }
+        engOutputStr.removeLast()
+        
+        return engOutputStr
+    }
+    
+    func updateMorseOutput(to string: String){
+        // replace doublespaces with /
+        var text = ""
+        do {
+            let regex = try NSRegularExpression(pattern: "[\\/| ]{2,}", options: .caseInsensitive)
+                text = regex.stringByReplacingMatches(
+                in: string,
+                options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                range: NSMakeRange(0, string.count),
+                withTemplate: "/"
+            )
+        } catch { print("regex error") }
+        self.morseText = text
+        
+        // make "/" in morseText gray
+        let morseAttrString = NSMutableAttributedString(string: morseText, attributes: morseAttrs)
+        for idx in 0..<morseText.count {
+            if morseText[idx] == "/" {
+                morseAttrString.addAttribute(
+                    .foregroundColor,
+                    value: UIColor(red:0.89, green:0.89, blue:0.89, alpha:1.0),
+                    range: NSRange(location:idx,length:1)
+                )
+            }
+        }
+
+        morseTextView.attributedText = morseAttrString.center()
+        let range = NSMakeRange(morseTextView.text.count - 1, 0)
+        morseTextView.scrollRangeToVisible(range)
+    }
+    
+    func updateOutputMTE(string: String) {
+        updateMorseOutput(to: string)
+        
+        // translate morse to english
+        engTextView.attributedText = morseDecode(string: string).center()
+        
+        // scroll to bottom of text areas
+        let range = NSMakeRange(engTextView.text.count - 1, 0)
+        engTextView.scrollRangeToVisible(range)
     }
     
     
@@ -293,6 +340,13 @@ extension MainVC {
 
 
 extension MainVC: UITextViewDelegate {
+    
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        UIMenuController.shared.isMenuVisible = false
+        return false
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         textView.text = textView.text.uppercased()
         morseText = morseEncode(text: textView.text)

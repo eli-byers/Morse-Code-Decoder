@@ -9,19 +9,34 @@
 import UIKit
 import CoreData
 
+let mainColor = UIColor.orange
+let backGround = UIColor.darkGray
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
+//    func setUIColor(main: UIColor, back: UIColor){
+//        NSUer
+//    }
+//
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 76/255, green: 161/266, blue: 245/255, alpha: 1)
-        UINavigationBar.appearance().tintColor = .white
+        
+        UINavigationBar.appearance().barTintColor = mainColor
+        UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        
+        window?.tintColor = mainColor
+        
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 76/255, green: 161/266, blue: 245/255, alpha: 1)
+//        UINavigationBar.appearance().tintColor = .white
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        
         
         return true
     }
