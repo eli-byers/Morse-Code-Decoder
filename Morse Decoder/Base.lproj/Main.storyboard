@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4b-yi-WSc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4b-yi-WSc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -226,10 +226,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="300" minValue="100" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="7r0-gp-SLq">
-                                                    <rect key="frame" x="100" y="7" width="261" height="31"/>
-                                                    <color key="minimumTrackTintColor" red="0.27834224699999999" green="0.62396883960000005" blue="0.97274690870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 bpm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZl-yk-Kb9">
                                                     <rect key="frame" x="16" y="11" width="70" height="21"/>
                                                     <constraints>
@@ -239,6 +235,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="300" minValue="100" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="7r0-gp-SLq">
+                                                    <rect key="frame" x="100" y="7" width="261" height="31"/>
+                                                    <color key="minimumTrackTintColor" red="0.27834224699999999" green="0.62396883960000005" blue="0.97274690870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </slider>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7r0-gp-SLq" firstAttribute="centerY" secondItem="4HN-Le-jvY" secondAttribute="centerY" id="0m2-ka-9vS"/>
@@ -257,10 +257,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="740" minValue="440" maxValue="1040" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-dP-OCM">
-                                                    <rect key="frame" x="100" y="7" width="261" height="31"/>
-                                                    <color key="minimumTrackTintColor" red="0.27834224699999999" green="0.62396883960000005" blue="0.97274690870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="740 Hz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OT-fl-E39">
                                                     <rect key="frame" x="16" y="11" width="70" height="21"/>
                                                     <constraints>
@@ -270,6 +266,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="740" minValue="440" maxValue="1040" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-dP-OCM">
+                                                    <rect key="frame" x="100" y="7" width="261" height="31"/>
+                                                    <color key="minimumTrackTintColor" red="0.27834224699999999" green="0.62396883960000005" blue="0.97274690870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </slider>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6OT-fl-E39" firstAttribute="leading" secondItem="HSn-V2-VII" secondAttribute="leading" constant="16" id="Mee-4P-Xby"/>
@@ -290,10 +290,17 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="nightSwitch" destination="tE5-K7-c8v" id="0jK-bV-kGc"/>
                         <outlet property="uiColorBlue" destination="5ch-nR-jZJ" id="WUg-Je-L4Q"/>
                         <outlet property="uiColorGreen" destination="uVS-Eq-2bo" id="I46-i4-iq3"/>
                         <outlet property="uiColorOrange" destination="9qB-7W-IWw" id="glU-YT-ngy"/>
                         <outlet property="uiColorPurple" destination="kHV-Qh-IoZ" id="GB9-nW-uAT"/>
+                        <outletCollection property="tableSections" destination="gun-9q-JWa" collectionClass="NSMutableArray" id="qCD-nT-y13"/>
+                        <outletCollection property="tableSections" destination="61e-Re-eYr" collectionClass="NSMutableArray" id="zl7-0g-rj3"/>
+                        <outletCollection property="tableCells" destination="tF2-mI-Dis" collectionClass="NSMutableArray" id="NvO-dD-f5R"/>
+                        <outletCollection property="tableCells" destination="B0O-Yt-cyr" collectionClass="NSMutableArray" id="mnv-lB-7cO"/>
+                        <outletCollection property="tableCells" destination="Bcz-jY-Pn8" collectionClass="NSMutableArray" id="5eL-bM-JLE"/>
+                        <outletCollection property="tableCells" destination="VKN-eJ-KWI" collectionClass="NSMutableArray" id="MPh-x3-Iwq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ar-I9-50M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,6 +585,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

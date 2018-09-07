@@ -81,6 +81,12 @@ class MainVC: UIViewController {
             morseAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
             engAttrs[NSAttributedStringKey.foregroundColor] = UIColor.white
             backgroundViews.forEach({view in view.backgroundColor = UI.Gray})
+            engTextView.keyboardAppearance = .dark
+        } else {
+            morseAttrs[NSAttributedStringKey.foregroundColor] = UIColor.black
+            engAttrs[NSAttributedStringKey.foregroundColor] = UIColor.black
+            backgroundViews.forEach({view in view.backgroundColor = UIColor.white})
+            engTextView.keyboardAppearance = .light
         }
         
         let colorTag = defaults.value(forKey: "UIColor") as! Int
@@ -146,8 +152,9 @@ class MainVC: UIViewController {
             let newChar = ["·","-"," ","/"][sender.tag]
             let preChar = morseText[cursorPos-1]
 
-            // prevent extra white space
-            if preChar == "/" && ["/"," "].contains(newChar) { return }
+            if preChar == "/" && [" ", "/"].contains(newChar) { return }
+
+            //FIXME: space before word doesnt work
             
             // get sidex
             let left = morseText.substring(toIndex: idx.start)
@@ -156,7 +163,7 @@ class MainVC: UIViewController {
             updateOutputMTE(string: morseText)
             
             // adjust when " " gets replaced by "/"
-            if preChar == " " && newChar == " " { cursorPos -= 1 }
+            if preChar == " " && [" ", "/"].contains(newChar) { cursorPos -= 1 }
             // update cursor
             morseTextView.setCursorPotition(to: cursorPos + 1)
         }

@@ -12,17 +12,22 @@ class TableVC: UIViewController {
     
     @IBOutlet weak var tableView:UITableView!
     
+    let defaults = UserDefaults.standard
     var tableData: [(eng: String, morse: String)] = []
+    var nightMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableData = Morse.Letters
         tableView.reloadData()
         
+        // remove line between nav bars
         navigationController?.navigationBar.shadowImage = UIImage()
-        
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-//        UINavigationBar.appearance().shadowImage = UIImage()
+    
+        nightMode = defaults.value(forKey: "NightMode") as! Bool
+        if nightMode {
+            tableView.backgroundColor = UI.Gray
+        }
     }
     
     @IBAction func DoneButtonPressed(_ sender: UIBarButtonItem) {
@@ -50,6 +55,11 @@ extension TableVC: UITableViewDataSource {
         let cellData = tableData[indexPath.row]
         cell.textLabel?.text = cellData.eng
         cell.detailTextLabel?.text = cellData.morse
+        
+        if nightMode {
+            cell.textLabel?.textColor = .white
+            cell.detailTextLabel?.textColor = .white
+        }
         return cell
     }
     

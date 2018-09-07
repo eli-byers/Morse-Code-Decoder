@@ -14,7 +14,7 @@ class UI: NSObject {
     static let Green = UIColor(red: 0/255, green: 188/255, blue: 96/255, alpha: 1)
     static let Orange = UIColor.orange
     static let Blue = UIColor(red: 71/255, green: 159/255, blue: 248/255, alpha: 1)
-    static let Gray = UIColor.darkGray
+    static let Gray = UIColor(white: 0.2, alpha: 1)
     
     static func colorFor(tag: Int) -> UIColor? {
         let colors = [UI.Purple, UI.Green, UI.Orange, UI.Blue]
